@@ -1,15 +1,9 @@
-import axios from 'axios'
 import { LOAD_POSTS, LOAD_POSTS_SUCCESS } from '../constants'
 
 const initial = {
   posts: [],
   loading: false,
   error: null
-}
-
-const getAllPosts = async () => {
-  const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
-  return response.data
 }
 
 export const postsReducer = (state = initial, action) => {
