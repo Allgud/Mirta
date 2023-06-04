@@ -1,11 +1,11 @@
+import GlobalRoutes from "./routes/GlobalRoutes";
+import Header from "./components/Header";
 
-
-const App = () => {
-
-
+export default function App() {
   return (
-    <h1>Hello</h1>
+    <>
+      <Header />
+      <GlobalRoutes />
+    </>
   );
 }
-
-export default App;

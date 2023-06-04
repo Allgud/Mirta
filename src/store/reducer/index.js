@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { postsReducer } from "./getAllPosts";
+import { postsReducer } from "./postsReducer";
 
 const rootReducer = combineReducers({postsReducer})
 
