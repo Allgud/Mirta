@@ -1,7 +1,14 @@
-import { call } from 'redux-saga/effects'
+import { call, put } from 'redux-saga/effects'
 import axios from 'axios'
-
+import { setPosts, setPostsError} from '../../actions/actionCreator'
+ 
 export default function* loadPosts() {
-  const response = yield call(axios, 'https://jsonplaceholder.typicode.com/posts')
-  console.log(response);
+  try {
+    const response = yield call(axios, 'https://jsonplaceholder.typicode.com/posts')
+    yield put(setPosts(response.data))
+  }
+  catch (e) {
+    console.log(e);
+  }
+  
 }

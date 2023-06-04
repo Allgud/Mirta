@@ -2,7 +2,7 @@ import { Card } from "react-bootstrap";
 
 export default function Post({ title, text, id }) {
   return (
-    <Card style={{ width: "100%" }}>
+    <Card style={{ width: "100%" }} className="mt-2">
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{text}</Card.Text>
