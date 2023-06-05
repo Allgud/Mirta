@@ -1,8 +1,8 @@
 import { all, call, spawn } from "redux-saga/effects"
-import loadPosts from "./initialSaga"
+import getAllPosts from "./initialSaga"
 
 export default function* rootSaga() {
-  const sagas = [loadPosts]
+  const sagas = [getAllPosts]
 
   const retrySagas = yield sagas.map(saga => {
     return spawn(function* () {

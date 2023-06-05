@@ -1,4 +1,4 @@
-import { LOAD_POSTS, LOAD_POSTS_SUCCESS } from '../constants'
+import { LOAD_POSTS, LOAD_POSTS_SUCCESS, LOAD_POSTS_FAILURE } from '../constants'
 
 const initial = {
   posts: [],
@@ -16,12 +16,19 @@ export const postsReducer = (state = initial, action) => {
       }
     };
     case LOAD_POSTS_SUCCESS: {
-      const data = action.payload
 
       return {
         ...state,
         loading: false,
-        posts: data
+        posts: action.payload
+      }
+    }
+    case LOAD_POSTS_FAILURE: {
+
+      return {
+        ...state,
+        loading: false,
+        error: action.payload
       }
     }
     default: return state
