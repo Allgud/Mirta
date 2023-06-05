@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux'
 
 export default function Layout() {
   const { loading } = useSelector(store => store.posts)
-  console.log(loading)
 
   return (
     <Container>
