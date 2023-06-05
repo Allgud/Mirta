@@ -1,20 +1,13 @@
-import { LOAD_POSTS, LOAD_POSTS_SUCCESS, LOAD_POSTS_FAILURE } from '../constants'
+import { LOAD_POSTS_SUCCESS, LOAD_POSTS_FAILURE } from '../constants'
 
 const initial = {
   posts: [],
-  loading: false,
+  loading: true,
   error: null
 }
 
 export const postsReducer = (state = initial, action) => {
   switch (action.type) {
-    // eslint-disable-next-line no-lone-blocks
-    case LOAD_POSTS: {
-      return {
-        ...state,
-        loading: true
-      }
-    };
     case LOAD_POSTS_SUCCESS: {
 
       return {

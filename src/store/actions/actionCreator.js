@@ -1,8 +1,4 @@
-import { LOAD_POSTS, LOAD_POSTS_SUCCESS, LOAD_POSTS_FAILURE } from '../constants'
-
-export const loadPosts = () => {
-  return {type: LOAD_POSTS}
-}
+import { LOAD_POSTS_SUCCESS, LOAD_POSTS_FAILURE } from '../constants'
 
 export const setPosts = (payload) => {
   return {
