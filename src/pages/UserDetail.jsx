@@ -6,6 +6,8 @@ import { Navigate } from "react-router-dom";
 export default function UserDetails() {
   const { currentUser } = useSelector(store => store.users)
 
+  console.log(currentUser);
+
   if (!currentUser) {
     return <Navigate to={"/"} />
   }
@@ -19,7 +21,7 @@ export default function UserDetails() {
         </Card.Header>
         <ListGroup>
           <ListGroup.Item><strong>Email:</strong> {currentUser.email}</ListGroup.Item>
-          <ListGroup.Item><strong>Address:</strong> {`${currentUser.address.city} ${currentUser.address.street}`}</ListGroup.Item>
+          <ListGroup.Item><strong>Address:</strong> {`${currentUser.address.city} ${currentUser.address.street} ${currentUser.address.suite}`}</ListGroup.Item>
           <ListGroup.Item><strong>Phone:</strong> {currentUser.phone}</ListGroup.Item>
           <ListGroup.Item><strong>Website:{' '}</strong><Link to={`http://${currentUser.website}`}>{currentUser.website}</Link></ListGroup.Item>
           <ListGroup.Item><strong>Company Name:</strong> {currentUser.company.name}</ListGroup.Item>

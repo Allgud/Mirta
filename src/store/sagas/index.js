@@ -1,22 +1,10 @@
-import { all, call, spawn } from "redux-saga/effects"
+import { all, fork } from "redux-saga/effects"
 import initialSaga from "./initialSaga"
+import commentsSaga from "./commentsSaga"
 
 export default function* rootSaga() {
-  const sagas = [initialSaga]
-
-  const retrySagas = yield sagas.map(saga => {
-    return spawn(function* () {
-      while (true) {
-        try {
-          yield call(saga)
-          break
-        }
-        catch (e) {
-          console.log(e)
-        }
-      }
-    })
-  })
-
-  yield all(retrySagas)
+  yield all([
+    fork(initialSaga),
+    fork(commentsSaga)
+  ])
 }

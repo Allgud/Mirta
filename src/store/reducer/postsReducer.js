@@ -9,7 +9,6 @@ const initial = {
 export const postsReducer = (state = initial, action) => {
   switch (action.type) {
     case LOAD_POSTS_SUCCESS: {
-
       return {
         ...state,
         loading: false,
@@ -17,7 +16,6 @@ export const postsReducer = (state = initial, action) => {
       }
     }
     case LOAD_POSTS_FAILURE: {
-
       return {
         ...state,
         loading: false,
