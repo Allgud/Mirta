@@ -7,7 +7,8 @@ import {
   GET_CURRENT_USER_POSTS,
   GET_COMMENTS,
   SET_COMMENTS,
-  SET_CURRENT_PAGE
+  SET_CURRENT_PAGE,
+  SET_CURRENT_USER_POSTS
 } from '../constants'
 
 export const setPosts = (payload) => ({
@@ -23,6 +24,11 @@ export const setPostsError = (payload) => ({
 export const getCurrentUserPosts = (payload) => ({
   type: GET_CURRENT_USER_POSTS,
   payload
+})
+
+export const setCurrentUserPosts = (payload) => ({
+  type: SET_CURRENT_USER_POSTS,
+  payload 
 })
 
 export const setUsers = (payload) => ({

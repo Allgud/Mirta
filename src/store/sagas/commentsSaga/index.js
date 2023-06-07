@@ -1,9 +1,7 @@
-import { GET_COMMENTS } from '../../constants'
+import { GET_COMMENTS, BASE_URL } from '../../constants'
 import { call, takeEvery, put, delay } from 'redux-saga/effects'
 import { setComments } from '../../actions/actionCreator'
 import axios from 'axios'
-
-const BASE_URL = 'https://jsonplaceholder.typicode.com'
 
 export function* setCommentsSaga(args) {
   yield delay(500)

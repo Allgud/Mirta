@@ -4,12 +4,12 @@ import { setCurrentPage } from '../../store/actions/actionCreator'
 
 export default function Paginator() {
   const dispatch = useDispatch()
-  const { postsView } = useSelector(store => store.posts)
+  const { postsView, currentPage } = useSelector(store => store.posts)
   const pages = Object.keys(postsView)
     .map(number =>
       <Pagination.Item
         key={number}
-        active={+number === 1}
+        active={+number === currentPage}
         onClick={() => dispatch(setCurrentPage(+number))}
       >
         {+number}

@@ -1,3 +1,5 @@
+export const BASE_URL = 'https://jsonplaceholder.typicode.com'
+
 export const LOAD_POSTS_SUCCESS = "LOAD_POSTS_SUCCESS"
 export const LOAD_POSTS_FAILURE = "LOAD_POSTS_FAILURE"
 
@@ -6,6 +8,7 @@ export const SET_USERS_FAILURE = "SET_USERS_FAILURE"
 
 export const SET_CURRENT_USER = "SET_CURRENT_USER"
 export const GET_CURRENT_USER_POSTS = "GET_CURRENT_USER_POSTS"
+export const SET_CURRENT_USER_POSTS = "SET_CURRENT_USER_POSTS"
 
 export const GET_COMMENTS = "GET_COMMENTS"
 export const SET_COMMENTS = "SET_COMMENTS"

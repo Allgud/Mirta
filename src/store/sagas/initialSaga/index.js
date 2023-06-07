@@ -1,8 +1,7 @@
 import { all, call, delay, fork, put } from 'redux-saga/effects'
 import axios from 'axios'
 import { setPosts, setPostsError, setUsers, setUsersError } from '../../actions/actionCreator'
-
-const BASE_URL = 'https://jsonplaceholder.typicode.com'
+import { BASE_URL } from '../../constants'
  
 function* getAllPosts() {
   yield delay(500)
