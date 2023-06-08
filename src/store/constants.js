@@ -14,3 +14,7 @@ export const GET_COMMENTS = "GET_COMMENTS"
 export const SET_COMMENTS = "SET_COMMENTS"
 
 export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE"
+
+export const SORT_FROM_BEGIN = "SORT_FROM_BEGIN"
+export const SORT_FROM_END = "SORT_FROM_END"
+export const SORT_BY_DEFAULT = "SORT_BY_DEFAULT"

@@ -8,7 +8,10 @@ import {
   GET_COMMENTS,
   SET_COMMENTS,
   SET_CURRENT_PAGE,
-  SET_CURRENT_USER_POSTS
+  SET_CURRENT_USER_POSTS,
+  SORT_FROM_BEGIN,
+  SORT_FROM_END,
+  SORT_BY_DEFAULT
 } from '../constants'
 
 export const setPosts = (payload) => ({
@@ -59,4 +62,16 @@ export const setComments = (payload) => ({
 export const setCurrentPage = (payload) => ({
   type: SET_CURRENT_PAGE,
   payload
-}) 
+})
+
+export const sortFromBegin = () => ({
+  type: SORT_FROM_BEGIN
+})
+
+export const sortFromEnd = () => ({
+  type: SORT_FROM_END
+})
+
+export const defaultSort = () => ({
+  type: SORT_BY_DEFAULT
+})
