@@ -1,4 +1,12 @@
-import { LOAD_POSTS_SUCCESS, LOAD_POSTS_FAILURE, SET_CURRENT_PAGE, SORT_FROM_BEGIN, SORT_FROM_END, SORT_BY_DEFAULT } from '../constants'
+import {
+  LOAD_POSTS_SUCCESS,
+  LOAD_POSTS_FAILURE,
+  SET_CURRENT_PAGE,
+  SORT_FROM_BEGIN,
+  SORT_FROM_END,
+  SORT_BY_DEFAULT,
+  SEARCH_BY_TITLE
+} from '../constants'
 import { createPostPagination } from '../helpers'
 
 const initial = {
@@ -50,6 +58,13 @@ export const postsReducer = (state = initial, action) => {
       return {
         ...state,
         postsView: createPostPagination(state.posts)
+      }
+    }
+    case SEARCH_BY_TITLE: {
+      const searched = state.posts.filter(el => el.title.startsWith(action.payload))
+      return {
+        ...state,
+        postsView: createPostPagination(searched)
       }
     }
     default: return state
