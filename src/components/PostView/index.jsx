@@ -1,10 +1,10 @@
-import { Container } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import Post from '../Post'
 
 export default function PostView({ posts, users, authorName }) {
 
   return (
-    <Container style={{ width: "100%" }} className="mt-3">
+    <Col style={{ width: "100%" }} className="mt-3">
       {
         posts.map(post => {
             const author = users?.find(el => el.id === post.userId) || authorName
@@ -18,6 +18,6 @@ export default function PostView({ posts, users, authorName }) {
             />
           })
       }
-    </Container>
+    </Col>
   )
 }

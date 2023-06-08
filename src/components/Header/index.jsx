@@ -10,19 +10,19 @@ export default function Header() {
   return (
     <Container>
       {error && <AlertError text={error} close={() => { }} />}     
-      <Container className="d-flex pt-2">
-        <Container style={{width: "100%"}}>
+      <Container className="d-flex p-2 gap-5">
+        <Row className="flex-grow-1">
           <SearchInput />   
-        </Container>
-        <Container className="d-flex pt-1 justify-content-end">
-          <Row>
-            <Col>Alexander</Col>
-            <Col>allgud@bk.ru</Col>
+        </Row>
+        <Row>
+          <Row className="d-flex flex-row pt-2 justify-content-end flex-nowrap">
+            <Col className="d-none d-sm-block">Alexander</Col>
+            <Col className="d-none d-lg-block">allgud@bk.ru</Col>
             <Col>
               <Image src={Img} roundedCircle />
             </Col>
           </Row>
-        </Container>
+        </Row>
       </Container>
     </Container>
   );
