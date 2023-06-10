@@ -12,7 +12,8 @@ import {
   SORT_FROM_BEGIN,
   SORT_FROM_END,
   SORT_BY_DEFAULT,
-  SEARCH_BY_TITLE
+  SEARCH_BY_TITLE,
+  GET_CURRENT_USER
 } from '../constants'
 
 export const setPosts = (payload) => ({
@@ -79,5 +80,10 @@ export const defaultSort = () => ({
 
 export const searchByTitle = (payload) => ({
   type: SEARCH_BY_TITLE,
+  payload
+})
+
+export const getCurrentUser = (payload) => ({
+  type: GET_CURRENT_USER,
   payload
 })
