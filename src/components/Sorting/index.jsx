@@ -1,4 +1,4 @@
-import { Dropdown, Container } from "react-bootstrap";
+import { Dropdown, Container, Row} from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { sortFromBegin, sortFromEnd, defaultSort } from '../../store/actions/actionCreator'
 import { useState } from "react";
@@ -29,19 +29,19 @@ export default function Sorting() {
   }
 
   return (
-    <Container className="mt-2 d-flex justify-content-end">
-      <Dropdown>
-        <Dropdown.Toggle variant="primary" >
-          Sort by: {mode}
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          {
-            items.map(item => (
-              <Dropdown.Item as="button" key={item} value={item} onClick={(evt) => handleChange(evt.target.value)}>{item}</Dropdown.Item>
-            ))
-          }
-        </Dropdown.Menu>
-      </Dropdown>
-    </Container>
+    <Row className="mt-2 d-flex justify-content-end">
+        <Dropdown>
+          <Dropdown.Toggle variant="primary" >
+            Sort by: {mode}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {
+              items.map(item => (
+                <Dropdown.Item as="button" key={item} value={item} onClick={(evt) => handleChange(evt.target.value)}>{item}</Dropdown.Item>
+              ))
+            }
+          </Dropdown.Menu>
+        </Dropdown>
+    </Row>
   )
 }

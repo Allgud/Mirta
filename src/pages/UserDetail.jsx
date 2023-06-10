@@ -1,4 +1,4 @@
-import { Container, Card, ListGroup, Col } from "react-bootstrap";
+import { Card, ListGroup, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import PostView from '../components/PostView'
@@ -14,18 +14,15 @@ export default function UserDetails() {
 
   useEffect(() => {
     dispatch(getCurrentUserPosts(location.pathname.split('/').splice(-1)))
-  }, [])
+  }, [dispatch, location.pathname])
 
   if (!currentUser) {
     return <Navigate to={"/"} />
   }
 
   return (
-    <Container className="d-flex justify-content-center" style={{ width: "100%" }}>
       <Col>
-        <Container className="mt-2">
-          <Link to="/" className="text-decoration-none mt-2">{'<'} Back to main</Link>
-        </Container>
+        <Link to="/" className="text-decoration-none mt-2">{'<'} Back to main</Link>
         <Card className="mt-2" style={{ width: "100%" }}>
           <Card.Header>
             <Card.Title className="p-2">{currentUser.name}</Card.Title>
@@ -45,6 +42,5 @@ export default function UserDetails() {
             : <PostView posts={currentUserPosts} authorName={currentUser.name}/>
         }
       </Col>
-    </Container>
   )
 }
